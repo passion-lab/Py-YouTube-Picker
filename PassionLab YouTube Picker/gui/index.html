@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Free YouTube downloader with intiutive user interface, download options and notification from @passion-lab">
+    <link rel="stylesheet" href="style.css">
+    <title>PassionLab YouTube Picker</title>
+</head>
+
+<body oncontextmenu="false;">
+    <!-- Main glassy window -->
+    <div class="main-frame">
+
+        <!-- Main link and download button form -->
+        <div class="frame flex flex-c">
+            <!-- JS: returns main page for download a new video again in success -->
+            <form class="flex flex-c" action="" method="">
+                <input type="text" name="" id="link" placeholder="https://youtube.com/watch?v=..."
+                    title="Enter/paste a youtube link" required class="m-5 p-a-10 h-41 w-450" onkeyup="checker();">
+                <button type="submit" id="submit" onclick="ytdDownload();" tabindex="1" disabled
+                    style="cursor: not-allowed" class="m-5 p-a-10 h-41 w-450">DOWNLOAD</button>
+            </form>
+        </div>
+
+        <!-- Download Options (Optional) -->
+        <div class="options">
+            <!-- Options static header -->
+            <p>Options:</p>
+            <span class="hr"></span>
+
+            <!-- Options for downloading video or audio -->
+            <div class="option video-audio">
+                Media Type: &nbsp
+                <input type="radio" name="vid-aud" id="video" value="video" onclick="firedUp('vid-aud');" checked>
+                <label for="video" onclick="firedUp('vid-aud');">Video &nbsp</label>
+                <input type="radio" name="vid-aud" id="audio" value="audio" onclick="firedUp('vid-aud');">
+                <label for="audio" onclick="firedUp('vid-aud');">Audio</label>
+            </div>
+
+            <!-- Options for video resolution -->
+            <div class="option video-resolution">
+                Video Resolution: &nbsp
+                <input type="radio" name="vid-res" id="360" value="360" onclick="firedUp('vid-res');">
+                <label for="360" onclick="firedUp('vid-res');">360 &nbsp</label>
+                <input type="radio" name="vid-res" id="720" value="720" onclick="firedUp('vid-res');" checked>
+                <label for="720" onclick="firedUp('vid-res');">720 &nbsp</label>
+                <input type="radio" name="vid-res" id="1080" value="1080" onclick="firedUp('vid-res');">
+                <label for="1080" onclick="firedUp('vid-res');">1080</label>
+            </div>
+
+            <!-- Options for audio bit rates -->
+            <div class="option audio-bitrate">
+                Audio Bitrates: &nbsp
+                <input type="radio" name="aud-bit" id="128" value="128" onclick="firedUp('aud-bit');" checked>
+                <label for="128" onclick="firedUp('aud-bit');">128 &nbsp</label>
+                <input type="radio" name="aud-bit" id="256" value="256" onclick="firedUp('aud-bit');">
+                <label for="256" onclick="firedUp('aud-bit');">256 &nbsp</label>
+                <input type="radio" name="aud-bit" id="320" value="320" onclick="firedUp('aud-bit');">
+                <label for="320" onclick="firedUp('aud-bit');">320</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Design elements -->
+    <span class="elm round"></span>
+    <span class="elm line"></span>
+    <span class="elm square"></span>
+    <span class="elm barfi"></span>
+    <span class="elm circle-border"></span>
+    <span class="elm barfi-linear"></span>
+
+    <!-- Author informations -->
+    <footer>
+        <section>
+            <p><a href="http://" target="_blank" title="Consider visiting my GitHub profile">@passion-lab</a><i>, Curator</i></p>
+        </section>
+    </footer>
+
+    <!-- Importing JS files -->
+    <script src="./eel.js"></script>
+    <script src="./app.js"></script>
+
+    <script>
+        // Making windows unresizable
+        window.addEventListener('resize', function () {
+            window.resizeTo(992, 584);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,386 @@
+/* Importing google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400&display=swap');
+
+
+
+/* ----------- Reseting from default and universal styling declarations ----------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.5s;
+}
+
+html {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    text-align: center;
+}
+
+input, button {
+    outline: none;
+    border-style: none;
+}
+
+
+/* ----------- custom classes ----------- */
+
+.h-41 {
+    height: 41px;
+}
+.w-450 {
+    width: 450px;
+}
+.m-10 {
+    margin: 10px;
+}
+.m-5 {
+    margin: 5px;
+}
+.m-b-20 {
+    margin-bottom: 20px;
+}
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.flex-c {
+    flex-direction: column;
+}
+.p-a-10 {
+    padding: 10px;
+}
+.p-r-100 {
+    padding-right: 100px;
+}
+
+
+/* ----------- specific elements ----------- */
+
+body {
+    background: #121212;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: auto;
+    height: 100vh;
+    width: 100%;
+    background: rgb(14, 14, 27);
+    transition: 0.5s;
+}
+
+.main-frame {
+    position: absolute;
+    height: 70%;
+    width: 80%;
+    color: white;
+    background: rgba(225, 225, 225, 0.027);
+    border: 1px solid rgba(225, 225, 225, 0.08);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+}
+
+.main-frame::before {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: -30%;
+    width: 200%;
+    height: 40px;
+    /* background: rgba(255, 255, 255, 0.055); */
+    background: linear-gradient(-45deg, rgb(255 255 255 / 2%) 0%, rgb(255 255 255 / 7%) 25%, rgb(255 255 255 / 2%) 77%, transparent);
+    filter: blur(20px);
+    transform: rotate(-40deg);
+    animation: main-frame-before 10s linear infinite;
+    opacity: 1;
+    z-index: 99;
+    /* overflow: hidden; */
+}
+
+@keyframes main-frame-before {
+    30% {
+        top: 150%;
+        opacity: 1;
+    }
+    31%,100% {
+        opacity: 0;
+    }
+}
+
+/* .main-frame::after {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: -30%;
+    width: 200%;
+    height: 40px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.1) 60%, rgba(0, 0, 0, 0.1) 20%, rgba(255, 255, 255, 0.1) 20%);
+    transform-origin: bottom;
+    transform: rotate(-40deg);
+    animation: main-frame-before 5s linear 0.5s infinite;
+    z-index: 99;
+} */
+
+span.elm {
+    display: inline-block;
+    position: absolute;
+}
+
+.round {
+    bottom: 50px;
+    left: 35%;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    background: crimson;
+    animation: round 10s linear infinite;
+}
+
+.line {
+    bottom: 200px;
+    right: 2%;
+    height: 1px;
+    width: 150px;
+    background: yellow;
+    /* transform: rotate(360deg); */
+    animation: line 10s linear infinite;
+}
+
+.square {
+    bottom: 80px;
+    left: 160px;
+    height: 30px;
+    width: 30px;
+    background: rgb(8, 214, 8);
+}
+
+.barfi {
+    top: 70px;
+    right: 20%;
+    height: 10px;
+    width: 10px;
+    background: rgb(11, 231, 231);
+    transform: rotate(45deg);
+    animation: barfi 10s ease-in infinite;
+}
+
+.circle-border {
+    top: 40px;
+    left: 40%;
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    border: 2px solid rgb(11, 33, 231);
+}
+
+.barfi-linear {
+    top: 150px;
+    left: 40px;
+    height: 60px;
+    width: 60px;
+    transform: rotate(45deg);
+    transform-style: preserve-3d;
+    background: linear-gradient(to left bottom, rgb(0, 81, 255), rgb(255, 2, 129));
+    animation: barfi-linear 10s linear infinite;
+}
+
+.barfi-linear::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to left bottom, rgb(0, 81, 255), rgb(255, 2, 129));
+    filter: blur(20px);
+}
+
+.barfi-linear::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateZ(30px) scale(50%);
+    background: white;
+    box-shadow: 0px 0 20px white,
+        0px 0 40px white;
+    opacity: 0.5;
+}
+
+
+@keyframes round {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(25px, -25px);
+    }
+    50% {
+        transform: translate(0px, -50px);
+    }
+    75% {
+        transform: translate(-25px, -25px);
+    }
+}
+@keyframes line {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes barfi {
+    70% {
+        top: 120px;
+    }
+}
+@keyframes barfi-linear {
+    from {
+        transform: rotate(45deg) rotateY(0deg) rotateZ(0deg);
+    }
+    to {
+        transform: rotate(45deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
+
+
+.frame {
+    /* display: block; */
+    height: 40%;
+    width: 80%;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+#link {
+    background: none;
+    border-bottom: 1px dashed rgba(255,255,255,0.5);
+    border-top: 1px dashed rgba(255,255,255,0.5);
+    color: grey;
+    transition: all 0.5s;
+}
+
+#link:hover {
+    border-top-color: white;
+    border-bottom-color: white;
+}
+
+#link:focus {
+    border-top: none;
+    border-bottom-color: rgb(141, 141, 141);
+    border-bottom-style: solid;
+}
+
+#link:valid {
+    border-top-color: rgb(141, 141, 141);
+    border-bottom-color: rgb(141, 141, 141);
+    border-bottom-style: solid;
+}
+
+#submit {
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    background: rgb(141, 141, 141);
+    transition: 0.5s;
+}
+
+#submit.animate:hover {
+    letter-spacing: 4px;
+    background: white;
+}
+
+.main-frame .options {
+    display: none;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 50%;
+    text-align: left;
+    font-family: 'Barlow Condensed', 'Segoe UI', sans-serif;
+    font-size: 14px;
+    opacity: 0.6;
+
+}
+
+.main-frame .options p {
+    padding: 2px 0;
+    font-weight: 400;
+}
+
+.main-frame .options span.hr {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 11px;
+    height: 1px;
+    width: 40%;
+    background: linear-gradient(to right, rgb(255, 255, 255), transparent);
+}
+
+.main-frame .options .option {
+    display: none;
+    opacity: 0.5;
+    animation: forth 1s linear 1;
+}
+@keyframes forth {
+    0% {transform: translateY(-10px); opacity: 0;}
+    100% {transform: translateY(0px); opacity: 0.5;}
+}
+
+.main-frame .options .option.rev {
+    animation: back 1s linear 1;
+}
+@keyframes back {
+    100% {transform: translateY(10px); opacity: 0;}
+}
+
+.main-frame .options .option.video-audio {
+    display: block;
+}
+
+.main-frame .options .option.video-resolution {
+    display: none;
+}
+
+.main-frame .options .option.audio-bitrate {
+    display: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+}
+
+footer section p {
+    font-size: 14px;
+    color: grey;
+}
+
+footer section p a {
+    text-decoration: none;
+}
+
+footer section p a:hover {
+    color: white;
+}
